@@ -14,6 +14,6 @@ mv ../apache-jmeter/bin/geocode .;
 tar -cvzf geocode.tgz geocode;
 mv ../apache-jmeter/bin/geocode.jtl .;
 
-cd ..
-rm apache-jmeter-5.4.1.tgz;
-rm -rf apache-jmeter;
+#cd ..
+#rm apache-jmeter-5.4.1.tgz;
+#rm -rf apache-jmeter;
