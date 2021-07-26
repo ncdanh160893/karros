@@ -4,7 +4,7 @@ curl https://downloads.apache.org//jmeter/binaries/apache-jmeter-5.4.1.tgz -o ap
 tar -xvzf apache-jmeter-5.4.1.tgz;
 mv apache-jmeter-5.4.1 apache-jmeter;
 mkdir -p -m a=rwx out;
-cp src/test/resource/geocode.jmx apache-jmeter/bin; 
+cp src/test/resource/performance/geocode.jmx apache-jmeter/bin; 
 cd apache-jmeter/bin;
 sh jmeter.sh -n -t geocode.jmx -l geocode.jtl;
 sh jmeter.sh -g geocode.jtl -f -e -o geocode;
