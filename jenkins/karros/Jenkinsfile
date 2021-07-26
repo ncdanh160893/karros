@@ -13,7 +13,7 @@ pipeline{
       steps {
         echo "=> Build Version: $BUILD_VERSION"
         echo "==> Build Service for branch: ${env.BRANCH_NAME}"
-        sh 'jenkins/karros/build.sh'
+        sh "jenkins/karros/build.sh"
       }
     }
   }
