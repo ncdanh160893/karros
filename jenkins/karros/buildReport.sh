@@ -6,7 +6,7 @@ mv apache-jmeter-5.4.1 apache-jmeter;
 mkdir -p -m a=rwx report;
 cp -R src/test/resource/performance apache-jmeter/bin; 
 cd apache-jmeter/bin;
-sh jmeter.sh -n -t performance/geocode.jmx -l geocode.jtl;
+sh jmeter.sh -n -t performance/geocode.jmx -l geocode.jtl -Jhost=$host;
 sh jmeter.sh -g geocode.jtl -f -e -o geocode;
 cd ../../report;
 rm -rf geocode;

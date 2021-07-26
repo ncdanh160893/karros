@@ -9,12 +9,12 @@ pipeline{
   }
 
   stages {
-    stage('Build') {
+    stage('Build Report') {
       steps {
         echo "=> Build Version: $BUILD_VERSION"
         echo "==> Build Service for branch: ${env.BRANCH_NAME}"
         sh "chmod +x -R ${env.WORKSPACE}"
-        sh "jenkins/karros/build.sh"
+        sh "jenkins/karros/development_ktvn_build_report.sh"
         perfReport filterRegex: '', relativeFailedThresholdNegative: 1.2, relativeFailedThresholdPositive: 1.89, relativeUnstableThresholdNegative: 1.8, relativeUnstableThresholdPositive: 1.5, sourceDataFiles: 'report/geocode.jtl'
       }
     }
