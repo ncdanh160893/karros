@@ -14,7 +14,15 @@ pipeline{
         echo "=> Build Version: $BUILD_VERSION"
         echo "==> Build Service for branch: ${env.BRANCH_NAME}"
         sh "chmod +x -R ${env.WORKSPACE}"
-        sh "jenkins/karros/development_ktvn_build_report.sh"
+        script { 
+            if (BRANCH_NAME == 'develop') {
+                echo "build report for branch develop"
+                sh "jenkins/karros/development_ktvn_build_report.sh"
+            } else (BRANCH_NAME == 'ktvn'){
+                echo "build report for branch ktvn"
+                sh "jenkins/karros/ktvn_build_report.sh"
+            }
+        }
         perfReport filterRegex: '', relativeFailedThresholdNegative: 1.2, relativeFailedThresholdPositive: 1.89, relativeUnstableThresholdNegative: 1.8, relativeUnstableThresholdPositive: 1.5, sourceDataFiles: 'report/geocode.jtl'
       }
     }
