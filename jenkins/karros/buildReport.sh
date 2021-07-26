@@ -1,3 +1,5 @@
+#!/bin/bash
+
 pwd; ls -ltrh;
 java -version;
 curl https://downloads.apache.org//jmeter/binaries/apache-jmeter-5.4.1.tgz -o apache-jmeter-5.4.1.tgz;
